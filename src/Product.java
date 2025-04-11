@@ -4,19 +4,13 @@ public class Product {
     private double price;
     private int quantity;
     public static String storeName = "Kho tổng ABC";
-    public static int totalProduct;
-    public static double totalInventoryvalue;
 
-    public Product (int id, String name, double price, int quantity) {
+    public Product(int id, String name, double price, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
-    public Product(String storeName){
-        this.storeName = storeName;
-    }
-
 
     public String getName() {
         return name;
@@ -25,41 +19,37 @@ public class Product {
     public double getPrice() {
         return price;
     }
+
     public int getQuantity() {
         return quantity;
-    }
-
-    public void display() {
-        System.out.println(id + " " + name + " " + price + " " + quantity);
     }
 
     public int getId() {
         return id;
     }
 
-    public static int getTotalProduct() {
-        return totalProduct;
-    }
-
     public static String getStoreName() {
         return storeName;
-    }
-
-    public static double getTotalInventoryvalue(double price, double quantity) {
-        return price * quantity;
     }
 
     public static void setStoreName(String storeName) {
         Product.storeName = storeName;
     }
 
+    public static double getTotalInventoryValue(Product[] products) {
+        double total = 0;
+        if (products != null) {
+            for (Product product : products) {
+                if (product != null) {
+                    total += product.getPrice() * product.getQuantity();
+                }
+            }
+        }
+        return total;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return "ID: " + id + ", Tên: " + name + ", Giá: " + price + ", Số lượng: " + quantity;
     }
 }
