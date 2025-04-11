@@ -61,10 +61,8 @@ public class Main {
         System.out.println("Giá trung bình: " + avgPrice);
 
 
-        String changeName = Product.getStoreName();
-        System.out.println("\nTên kho cũ: " + changeName);
-        changeName = "Kho miền Nam";
-        System.out.println("Tên kho mới: " + changeName);
+        Product.setStoreName("Kho miền nam");
+        System.out.println("\nTên kho sau khi thay đổi: " + Product.getStoreName());
 
     }
 }
