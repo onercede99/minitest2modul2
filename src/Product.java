@@ -3,7 +3,7 @@ public class Product {
     private String name;
     private double price;
     private int quantity;
-    public static String storeName = "Kho tong ABC";
+    public static String storeName = "Kho tổng ABC";
     public static int totalProduct;
     public static double totalInventoryvalue;
 
@@ -13,6 +13,10 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
     }
+    public Product(String storeName){
+        this.storeName = storeName;
+    }
+
 
     public String getName() {
         return name;
